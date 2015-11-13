@@ -1,0 +1,21 @@
+<configuration>
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>.%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg %n
+            </Pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+    </appender>
+
+
+    <!--<include resource="org/springframework/boot/logging/logback/base.xml"/>-->
+    <logger name="org.springframework" level="DEBUG"/>
+
+    <logger name="root" level="INFO"/>
+
+    <root level="INFO">
+        <appender-ref ref="consoleAppender"/>
+    </root>
+</configuration>

@@ -1,4 +1,4 @@
-package com.dchuiko.sprscl.beans
+package com.dchuiko.sprscl.back.beans
 
 import org.springframework.stereotype.Component
 

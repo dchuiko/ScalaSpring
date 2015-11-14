@@ -1,6 +1,6 @@
 package com.dchuiko.sprscl
 
-import com.dchuiko.sprscl.beans.MyBean
+import com.dchuiko.sprscl.back.beans.MyBean
 import org.junit.Assert.assertNotNull
 import org.junit.Test
 import org.springframework.beans.factory.annotation.Autowired

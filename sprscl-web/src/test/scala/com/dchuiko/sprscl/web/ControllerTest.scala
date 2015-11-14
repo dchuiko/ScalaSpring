@@ -1,9 +1,8 @@
 package com.dchuiko.sprscl.web
 
-import com.dchuiko.sprscl.beans.MyBean
 import com.dchuiko.sprscl.web.controller.IndexController
-import org.junit.{Test, Assert}
 import org.junit.Assert.assertNotNull
+import org.junit.Test
 import org.junit.runner.RunWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.test.context.ContextConfiguration

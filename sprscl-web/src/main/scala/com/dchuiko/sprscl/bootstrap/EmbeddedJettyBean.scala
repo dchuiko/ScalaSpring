@@ -1,24 +1,24 @@
-package com.dchuiko.sprscl.web.web
+package com.dchuiko.sprscl.bootstrap
 
 import javax.annotation.PostConstruct
 
 import com.typesafe.scalalogging.slf4j.Logger
 import org.eclipse.jetty.server.Server
-import org.eclipse.jetty.servlet.{ServletContextHandler, ServletHolder}
+import org.eclipse.jetty.servlet.ServletContextHandler
 import org.eclipse.jetty.webapp.WebAppContext
 import org.slf4j.LoggerFactory
-import org.springframework.context.{ApplicationContext, ApplicationContextAware}
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.core.io.ClassPathResource
 import org.springframework.stereotype.Component
+import org.springframework.web.context.WebApplicationContext
 import org.springframework.web.context.support.XmlWebApplicationContext
-import org.springframework.web.context.{ContextLoaderListener, WebApplicationContext}
-import org.springframework.web.servlet.DispatcherServlet
 
 @Component
 class EmbeddedJettyBean {
   private val logger = Logger(LoggerFactory.getLogger(classOf[EmbeddedJettyBean]))
 
-  private val DEFAULT_PORT = 8080
+  @Value("${port}")
+  private val DEFAULT_PORT = 0
   private val CONTEXT_PATH = "/"
   private val CONFIG_LOCATION = "com.dchuiko.sprscl.web.config"
   private val MAPPING_URL = "/*"

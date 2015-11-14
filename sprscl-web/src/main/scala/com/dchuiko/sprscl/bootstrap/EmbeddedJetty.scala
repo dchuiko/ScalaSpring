@@ -1,4 +1,4 @@
-package com.dchuiko.sprscl.web
+package com.dchuiko.sprscl.bootstrap
 
 import com.typesafe.scalalogging.slf4j.Logger
 import org.eclipse.jetty.server.Server
@@ -15,9 +15,7 @@ object EmbeddedJetty {
 
   private val DEFAULT_PORT = 8080
   private val CONTEXT_PATH = "/"
-  private val CONFIG_LOCATION = "com.dchuiko.sprscl.web.config"
   private val MAPPING_URL = "/*"
-  private val DEFAULT_PROFILE = "dev"
 
   def start() = {
     val jettyServer = new Server(DEFAULT_PORT)

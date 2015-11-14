@@ -19,10 +19,10 @@ class EmbeddedJettyBean {
 
   @Value("${port}")
   private val DEFAULT_PORT = 0
-  private val CONTEXT_PATH = "/"
-  private val CONFIG_LOCATION = "com.dchuiko.sprscl.web.config"
-  private val MAPPING_URL = "/*"
-  private val DEFAULT_PROFILE = "dev"
+  @Value("${contextPath}")
+  private val CONTEXT_PATH : String = ""
+  @Value("${mappingUrl}")
+  private val MAPPING_URL = ""
 
   @PostConstruct
   def init() = {

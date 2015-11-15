@@ -14,7 +14,7 @@ class ConnectionTest extends BaseTest {
   val jdbc: JdbcTemplate = null
 
   @Test
-  def testConnection = {
+  def testConnection() = {
     val o: Seq[Int] = jdbc.query("select * from pg_stat_activity", (rs: ResultSet, rowNum: Int) => {
       rs.getInt(3)
     })

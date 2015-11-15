@@ -71,6 +71,12 @@
             <artifactId>scala-compiler</artifactId>
             <version>${scala.version}</version>
         </dependency>
+        <dependency>
+        	<groupId>io.ratpack</groupId>
+        	<artifactId>ratpack-hikari</artifactId>
+        	<version>${hikari.version}</version>
+        </dependency>
+
 
         <!-- TEST -->
         <dependency>

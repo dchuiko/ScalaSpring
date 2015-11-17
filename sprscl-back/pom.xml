@@ -39,27 +39,45 @@
                     </jvmArgs>
                 </configuration>
             </plugin>
-            <!--<plugin>-->
-            <!--<groupId>org.scala-tools</groupId>-->
-            <!--<artifactId>maven-scala-plugin</artifactId>-->
-            <!--<version>2.15.2</version>-->
-            <!--<executions>-->
-            <!--<execution>-->
-            <!--<goals>-->
-            <!--<goal>compile</goal>-->
-            <!--<goal>testCompile</goal>-->
-            <!--</goals>-->
-            <!--</execution>-->
-            <!--</executions>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>${flyway.version}</version>
+                <executions>
+                    <execution>
+                        <id>dev</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>migrate</goal>
+                        </goals>
+                        <configuration>
+                            <url>jdbc:postgresql://localhost:5432/sprscl</url>
+                            <user>sprscl</user>
+                            <password>sprscl</password>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>test</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>migrate</goal>
+                        </goals>
+                        <configuration>
+                            <url>jdbc:postgresql://localhost:5432/sprscl-test</url>
+                            <user>sprscl</user>
+                            <password>sprscl</password>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
     <dependencies>
         <dependency>
-        	<groupId>javax.enterprise</groupId>
-        	<artifactId>cdi-api</artifactId>
-        	<version>${cdi.version}</version>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+            <version>${cdi.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -67,9 +85,9 @@
             <version>${spring.version}</version>
         </dependency>
         <dependency>
-        	<groupId>org.springframework</groupId>
-        	<artifactId>spring-jdbc</artifactId>
-        	<version>${spring.version}</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.scala-lang</groupId>
@@ -77,16 +95,20 @@
             <version>${scala.version}</version>
         </dependency>
         <dependency>
-        	<groupId>org.postgresql</groupId>
-        	<artifactId>postgresql</artifactId>
-        	<version>${postgresql.version}</version>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
         </dependency>
         <dependency>
-        	<groupId>io.ratpack</groupId>
-        	<artifactId>ratpack-hikari</artifactId>
-        	<version>${hikari.version}</version>
+            <groupId>io.ratpack</groupId>
+            <artifactId>ratpack-hikari</artifactId>
+            <version>${hikari.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>${flyway.version}</version>
+        </dependency>
 
         <!-- TEST -->
         <dependency>

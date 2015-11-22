@@ -21,6 +21,18 @@ class GoodDao @Autowired() (val dsl : DSLContext) {
     id
   }
 
+  def update(good: GoodRecord) : Unit = {
+    good.update()
+  }
+
+  def update(id: UUID, name: String, price: BigDecimal, version: Int) = {
+    dsl.update(GOOD)
+      .set(GOOD.NAME, name)
+      .set(GOOD.PRICE, price.bigDecimal)
+      .set(GOOD.VERSION, Integer.valueOf(version + 1))
+      .where(GOOD.ID.equal(id)).execute()
+  }
+
   def find(id : UUID) : Option[GoodRecord] = {
     dsl.selectFrom(GOOD).where(GOOD.ID.equal(id)).fetchOptional()
   }

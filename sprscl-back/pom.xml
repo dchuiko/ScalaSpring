@@ -114,7 +114,9 @@
                         <name>org.jooq.util.ScalaGenerator</name>
                         <database>
                             <includes>.*</includes>
+                            <excludes>schema_version</excludes>
                             <inputSchema>sprscl</inputSchema>
+                            <recordVersionFields>version</recordVersionFields>
                         </database>
                         <target>
                             <packageName>com.dchuiko.sprscl.back.db.model</packageName>

@@ -3,7 +3,7 @@ package com.dchuiko.sprscl
 import java.sql.ResultSet
 import javax.inject.Inject
 
-import com.dchuiko.sprscl.back.config.BackAppConfig._
+import com.dchuiko.sprscl.back.config.BackConversions._
 import org.junit.Test
 import org.springframework.jdbc.core.JdbcTemplate
 
@@ -20,8 +20,5 @@ class ConnectionTest extends BaseTest {
     })
 
     val b = o
-
-//    val d = 43.9
-//    val x = d / "dfdf"
   }
 }

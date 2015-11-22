@@ -1,6 +1,5 @@
 package com.dchuiko.sprscl.back.config
 
-import java.sql.ResultSet
 import javax.sql.DataSource
 
 import com.zaxxer.hikari.{HikariConfig, HikariDataSource}
@@ -8,7 +7,7 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.{Bean, ComponentScan, Configuration, Profile}
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer
 import org.springframework.core.io.{ClassPathResource, Resource}
-import org.springframework.jdbc.core.{JdbcTemplate, RowMapper}
+import org.springframework.jdbc.core.JdbcTemplate
 
 @Configuration
 @ComponentScan(basePackages = Array("com.dchuiko.sprscl.back"))
@@ -77,11 +76,11 @@ object BackAppConfig {
     }
   }
 
-  implicit def toRowMapper[T](function2: (ResultSet, Int) => T): RowMapper[T] = {
-    new RowMapper[T] {
-      override def mapRow(rs: ResultSet, rowNum: Int): T = function2(rs, rowNum)
-    }
-  }
+//  implicit def toRowMapper[T](function2: (ResultSet, Int) => T): RowMapper[T] = {
+//    new RowMapper[T] {
+//      override def mapRow(rs: ResultSet, rowNum: Int): T = function2(rs, rowNum)
+//    }
+//  }
 //
 //  implicit def toDouble(v: String): Double = {
 //    0.0

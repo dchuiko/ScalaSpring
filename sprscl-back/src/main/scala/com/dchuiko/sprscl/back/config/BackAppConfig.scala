@@ -67,6 +67,7 @@ class BackAppConfig {
     val jooqConfig: DefaultConfiguration = new DefaultConfiguration()
     jooqConfig.setConnectionProvider(jooqDataSourceConnectionProvider)
     jooqConfig.setSQLDialect(SQLDialect.POSTGRES_9_4)
+    jooqConfig.settings().setExecuteWithOptimisticLocking(true)
     jooqConfig
   }
 

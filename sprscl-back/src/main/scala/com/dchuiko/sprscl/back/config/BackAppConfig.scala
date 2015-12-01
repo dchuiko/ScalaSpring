@@ -111,22 +111,5 @@ object BackAppConfig {
       pspc
     }
   }
-
-  //  implicit def toRowMapper[T](function2: (ResultSet, Int) => T): RowMapper[T] = {
-  //    new RowMapper[T] {
-  //      override def mapRow(rs: ResultSet, rowNum: Int): T = function2(rs, rowNum)
-  //    }
-  //  }
-  //
-  //  implicit def toDouble(v: String): Double = {
-  //    0.0
-  //  }
-
-  //  implicit def toRowMapper(function2: (ResultSet, Int) => AnyRef)(): RowMapper[AnyRef] = {
-  //    new RowMapper[AnyRef] {
-  //      override def mapRow(rs: ResultSet, rowNum: Int): AnyRef = function2(rs, rowNum)
-  //    }
-  //  }
-
 }
 
